@@ -72,7 +72,7 @@ I experimented also by adding a dropout in the convolutional network but this re
 overfitting of data and hence a dropout actually led to reduced data being trained and led to a decrease in the accuracy. Hence I decided not to use
 dropout.
 
-<table style="width:100% align:center">
+<table style="width:100%; align:center;">
   <tr>
     <th>Layer</th>
     <th>Description</th>    
