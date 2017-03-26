@@ -28,14 +28,11 @@ The data set for this project is available as pickled files. There are three set
 
 ####<b>Data Set Visualisation
 Some of the test images as available in the data set can be seen below.
-![alt-text-1](testimages/test_10700.png) 
-![alt-text-2](testimages/test_11654.jpg)
-![alt-text-1](testimages/test_11682.jpg) 
-![alt-text-2](testimages/test_11694.jpg")
+<img src="testimages/test_10700.png" width="20"> <img src="testimages/test_11654.jpg" width="20">  <img src="testimages/test_11682.jpg" width="20">  <img src="testimages/test_11694.jpg" width="20"> 
 
 In addition to this the count of each sign is calculated using the unique function available in Python and numpy and plotted using matlab functions.
 
-![alt-text-1](testimages\barchart.png "title-1")
+![Bar Chart](testimages/barchart.png "Bar Chart Image")
  
 ####<b> Preprocessing the dataset
 
