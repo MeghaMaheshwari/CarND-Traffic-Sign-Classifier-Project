@@ -30,7 +30,9 @@ The data set for this project is available as pickled files. There are three set
 
 #### <b>Data Set Visualisation</b>
 Some of the test images as available in the data set can be seen below : </br>
-<img src="testimages/test_10700.jpg" width="80" style="margin-right: 5px;"> <img src="testimages/test_11654.jpg" width="80" style="margin-right: 5px;">  <img src="testimages/test_11682.jpg" width="80" style="margin-right: 5px;">  <img src="testimages/test_11694.jpg" width="80"> 
+</br>
+</br>
+<img src="testimages/test_10700.jpg" width="150" style="margin-right: 15px;"> <img src="testimages/test_11654.jpg" width="150" style="margin-right: 15px;">  <img src="testimages/test_11682.jpg" width="150" style="margin-right: 15px;">  <img src="testimages/test_11694.jpg" width="150"> 
 
 In addition to this the count of each sign is calculated using the unique function available in Python and numpy and plotted using matlab functions.
 
@@ -41,9 +43,10 @@ In addition to this the count of each sign is calculated using the unique functi
 ##### <b>Shuffling the images</b> - As a first step, the dataset is shuffled to ensure that there is good mix of different kinds of images in each batch run. This was done because without shuffling when the images from the training set was printed, it was seen that bunch of similar images occurred together in the dataset.
 
 ##### <b> Grayscaling the images</b> -  Each image in the dataset is a colored image. Thus images were converted to grayscale to ensure that the network has to operate on one channel instead of three channels. The formula for luminosity was used to grayscale the images as this provided a better estimate than simply averaging the RGB values.
-An example of an image before and after grayscaling is seen below:
+An example of an image before and after grayscaling is seen below: </br>
+</br>
 
-![alt-text-1](gray/gray.png "title-1") ![alt-text-2](gray/test_16.jpg "title-2")
+<img src="gray/gray.png" style="margin-right: 50px;"> <img src="gray/test_16.jpg" width="360">
 
 ##### <b>Normalization</b> - This was done as suggested in one of the lectures in tensor flow to maintain numerical stability. Initially I did not choose to normalize but using normalization improved the validation accuracy. 
 
