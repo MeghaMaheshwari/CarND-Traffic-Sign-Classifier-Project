@@ -32,9 +32,10 @@ The data set for this project is available as pickled files. There are three set
 Some of the test images as available in the data set can be seen below : </br>
 </br>
 </br>
-<img src="testimages/test_10700.jpg" width="150" style="margin-right: 30px;"> <img src="testimages/test_11654.jpg" width="150" style="margin-right: 30px;">  <img src="testimages/test_11682.jpg" width="150" style="margin-right: 30px;">  <img src="testimages/test_11694.jpg" width="150"> 
+<img src="testimages/test_10700.jpg" width="150" style="margin-right: 50px;"> <img src="testimages/test_11654.jpg" width="150" style="margin-right: 50px;">  <img src="testimages/test_11682.jpg" width="150" style="margin-right: 50px;">  <img src="testimages/test_11694.jpg" width="150"> 
 
 In addition to this the count of each sign is calculated using the unique function available in Python and numpy and plotted using matlab functions.
+The code for this is available in cell 4 of the IPython notebook.
 
 ![Bar Chart](testimages/barchart.png "Bar Chart Image")
  
@@ -43,14 +44,17 @@ In addition to this the count of each sign is calculated using the unique functi
 ##### <b>Shuffling the images</b> - As a first step, the dataset is shuffled to ensure that there is good mix of different kinds of images in each batch run. This was done because without shuffling when the images from the training set was printed, it was seen that bunch of similar images occurred together in the dataset.
 
 ##### <b> Grayscaling the images</b> -  Each image in the dataset is a colored image. Thus images were converted to grayscale to ensure that the network has to operate on one channel instead of three channels. The formula for luminosity was used to grayscale the images as this provided a better estimate than simply averaging the RGB values.
+More information on grayscaling can be obtained from the link :
+<a href="https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/">https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/</a>
 An example of an image before and after grayscaling is seen below: </br>
 </br>
 
-<img src="gray/gray.png" style="margin-right: 50px;"> <img src="gray/test_16.jpg" width="320">
+<img src="gray/gray.png" style="margin-right: 50px;"> <img src="gray/test_16.jpg" width="300">
 
 ##### <b>Normalization</b> - This was done as suggested in one of the lectures in tensor flow to maintain numerical stability. Initially I did not choose to normalize but using normalization improved the validation accuracy. 
 
-The above pre processing steps were done for each of training, testing and validation dataset.
+The above pre processing steps were done for each of training, testing and validation dataset. The code for this is available in cells 5, 6, 7 and 8 of the IPython
+notebook.
 
 #### <b> Model Architecture </b>
 
@@ -67,40 +71,40 @@ I utilized the AdamOptimizer from within TensorFLow to optimize, which seemed to
 			Layer    | Description
 			-------- | ------------
 			Input    | 32x32x32
-	  Convolution    | 1x1 stride,padding="VALID",output = 28x28x6
+			Convolution    | 1x1 stride,padding="VALID",output = 28x28x6
 		    RELU     | 
-	    Max Pooling  | 2x2 stride, output = 14x14x6
-	    Convolution  | 1x1 stride,padding="VALID",output = 10x10x16
+			Max Pooling  | 2x2 stride, output = 14x14x6
+			Convolution  | 1x1 stride,padding="VALID",output = 10x10x16
 	        RELU     | 
-	    Max Pooling  | 2x2 stride, output = 5x5x16
-	       Flatten   | output = 400
-	FullyConnected   | input = 400, output = 120
+			Max Pooling  | 2x2 stride, output = 5x5x16
+			Flatten   | output = 400
+			FullyConnected   | input = 400, output = 120
 			RELU     |
-	FullyConnected   | input = 120, output = 84
+			FullyConnected   | input = 120, output = 84
 			RELU     |
-	FullyConnected   | input = 84, output (Logits) = 43	      
+			FullyConnected   | input = 84, output (Logits) = 43	      
 
 
 > **Note:** I did not split the training data into training and validation sets as the validation data that was provided gave reasonable accuracy results.
 
 ##### <b> My final model results were : </b>
-Validation Accuracy = 94.2%
-Testing accuracy = 91.2%
+Validation Accuracy = 94.6% </br>
+Testing accuracy = 91.5%
 
 #### <b> Testing model on new images </b>
 
 Five German traffic signs were downloaded from the internet and ran using our network. The five images are as follows:
 
-![alt-text-1](german_traffic_sign\image_cross.jpg "Cross Sign") ![alt-text-2](german_traffic_sign\image_one.jpg "Pedestrian Sign") ![alt-text-3](german_traffic_sign\image_three.jpg "50 Speed Limit") ![alt-text-4](german_traffic_sign\test.jpg "Stop Sign")![alt-text-5](german_traffic_sign\test_one.jpg "Yeild Sign") 
+<img src="german_traffic_sign/NoEntry_Sign.jpg" width="150" style="margin-right: 50px;"> <img src="german_traffic_sign/Pedestrain_Sign.jpg" width="150" style="margin-right: 50px;">  <img src="german_traffic_sign/SpeedLimit_50_Sign.jpg" width="150" style="margin-right: 50px;">  <img src="german_traffic_sign/Stop_Sign.jpg" width="150" style="margin-right: 50px;"> <img src="german_traffic_sign/Yeild_Sign.jpg" width="150">
 
 The five images I have added are: 
-1: Cross sign
+1: No Entry sign
 2: Pedestrian sign
 3: 50 Speed Limit
 4: Stop Sign 
 5: Yield sign.
 
-The accuracy result is 20%. One reason for low accuracy result is that since my network accepts an input of size 32x32x3 , I had to resize the image to 32x32 which also effected the aspect ratio.
+The accuracy result is 100%. One reason for low accuracy result is that since my network accepts an input of size 32x32x3 , I had to resize the image to 32x32 which also effected the aspect ratio.
 
 From the soft max probability, the cross sign is detected incorrectly because it assumes its a speed limit sign which I assume is due to its shape.
 
