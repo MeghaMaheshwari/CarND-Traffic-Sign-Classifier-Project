@@ -45,11 +45,11 @@ The code for this is available in cell 4 of the IPython notebook.
 
 ##### <b> Grayscaling the images</b> -  Each image in the dataset is a colored image. Thus images were converted to grayscale to ensure that the network has to operate on one channel instead of three channels. The formula for luminosity was used to grayscale the images as this provided a better estimate than simply averaging the RGB values.
 More information on grayscaling can be obtained from the link :
-<a href="https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/">https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/</a>
+<a href="https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/">https://www.johndcook.com/blog/2009/08/24/algorithms-convert-color-grayscale/</a> </br></br>
 An example of an image before and after grayscaling is seen below: </br>
 </br>
 
-<img src="gray/gray.png" style="margin-right: 50px;"> <img src="gray/test_16.jpg" width="300">
+<img src="gray/gray.png" style="margin-right: 50px;"> <img src="gray/test_16.jpg" width="280">
 
 ##### <b>Normalization</b> - This was done as suggested in one of the lectures in tensor flow to maintain numerical stability. Initially I did not choose to normalize but using normalization improved the validation accuracy. 
 
@@ -68,21 +68,79 @@ Changing the epoch from 10 to 20 did not provide any improvement in accuracy. Ho
 For the model hyperparameters, a mean of 0 and standard deviation/sigma of 0.1 was taken. These hyperparameters attempt to keep a mean of 0 and equal variance.
 I utilized the AdamOptimizer from within TensorFLow to optimize, which seemed to do better than a regular Gradient Descent Optimizer
 
+<table style="width:100%">
+  <tr>
+    <th>Layer</th>
+    <th>Description</th>    
+  </tr>
+  <tr>
+    <td>Input</td>
+    <td>32x32x32</td>    
+  </tr>
+  <tr>
+    <td>Convolution</td>
+    <td>1x1 stride,padding="VALID",output = 28x28x6</td>   
+  </tr>
+  <tr>
+    <td>RELU</td>
+    <td>output = 28x28x6</td>   
+  </tr>
+  <tr>
+    <td>Max Pooling</td>
+    <td>2x2 stride, output = 14x14x6</td>   
+  </tr>
+  <tr>
+    <td>Convolution</td>
+    <td>1x1 stride,padding="VALID",output = 10x10x16</td>   
+  </tr>
+  <tr>
+    <td>RELU</td>
+    <td>output = 10x10x16</td>   
+  </tr>
+  <tr>
+    <td>Max Pooling</td>
+    <td>2x2 stride, output = 5x5x16</td>   
+  </tr>
+  <tr>
+    <td>Flatten</td>
+    <td>output = 400</td>   
+  </tr>
+  <tr>
+    <td>FullyConnected</td>
+    <td>input = 400, output = 120</td>   
+  </tr>
+  <tr>
+    <td>RELU</td>
+    <td>output = 120</td>   
+  </tr>
+  <tr>
+    <td>FullyConnected</td>
+    <td>input = 120, output = 84</td>   
+  </tr>
+  <tr>
+    <td>RELU</td>
+    <td>output = 84</td>   
+  </tr>
+  <tr>
+    <td>FullyConnected</td>
+    <td>input = 84, output(Logits) = 43</td>   
+  </tr>
+</table>
 			Layer    | Description
 			-------- | ------------
 			Input    | 32x32x32
-			Convolution    | 1x1 stride,padding="VALID",output = 28x28x6
+	  Convolution    | 1x1 stride,padding="VALID",output = 28x28x6
 		    RELU     | 
-			Max Pooling  | 2x2 stride, output = 14x14x6
-			Convolution  | 1x1 stride,padding="VALID",output = 10x10x16
-	        RELU     | 
-			Max Pooling  | 2x2 stride, output = 5x5x16
-			Flatten   | output = 400
-			FullyConnected   | input = 400, output = 120
+		Max Pooling  | 2x2 stride, output = 14x14x6
+		Convolution  | 1x1 stride,padding="VALID",output = 10x10x16
+			RELU     | 
+		Max Pooling  | 2x2 stride, output = 5x5x16
+		   Flatten   | output = 400
+	FullyConnected   | input = 400, output = 120
 			RELU     |
-			FullyConnected   | input = 120, output = 84
+	FullyConnected   | input = 120, output = 84
 			RELU     |
-			FullyConnected   | input = 84, output (Logits) = 43	      
+	FullyConnected   | input = 84, output (Logits) = 43	      
 
 
 > **Note:** I did not split the training data into training and validation sets as the validation data that was provided gave reasonable accuracy results.
@@ -97,7 +155,7 @@ Five German traffic signs were downloaded from the internet and ran using our ne
 
 <img src="german_traffic_sign/NoEntry_Sign.jpg" width="150" style="margin-right: 50px;"> <img src="german_traffic_sign/Pedestrain_Sign.jpg" width="150" style="margin-right: 50px;">  <img src="german_traffic_sign/SpeedLimit_50_Sign.jpg" width="150" style="margin-right: 50px;">  <img src="german_traffic_sign/Stop_Sign.jpg" width="150" style="margin-right: 50px;"> <img src="german_traffic_sign/Yeild_Sign.jpg" width="150">
 
-The five images I have added are: 
+The five images I have added are: </br>
 1: No Entry sign
 2: Pedestrian sign
 3: 50 Speed Limit
