@@ -66,16 +66,20 @@ I initially used an epoch of value 10 with a batch size of 128. However, experim
 Changing the epoch from 10 to 20 did not provide any improvement in accuracy. However, using a significantly larger epoch like 40 provided a better convergence.
 
 For the model hyperparameters, a mean of 0 and standard deviation/sigma of 0.1 was taken. These hyperparameters attempt to keep a mean of 0 and equal variance.
-I utilized the AdamOptimizer from within TensorFLow to optimize, which seemed to do better than a regular Gradient Descent Optimizer
+I utilized the AdamOptimizer from within TensorFLow to optimize, which seemed to do better than a regular Gradient Descent Optimizer.
 
-<table style="width:100%">
+I experimented also by adding a dropout in the convolutional network but this reduced my validation accuracy. I would assume that there was no issues with
+overfitting of data and hence a dropout actually led to reduced data being trained and led to a decrease in the accuracy. Hence I decided not to use
+dropout.
+
+<table style="width:100% align:center">
   <tr>
     <th>Layer</th>
     <th>Description</th>    
   </tr>
   <tr>
     <td>Input</td>
-    <td>32x32x32</td>    
+    <td>32x32x3</td>    
   </tr>
   <tr>
     <td>Convolution</td>
@@ -125,23 +129,7 @@ I utilized the AdamOptimizer from within TensorFLow to optimize, which seemed to
     <td>FullyConnected</td>
     <td>input = 84, output(Logits) = 43</td>   
   </tr>
-</table>
-			Layer    | Description
-			-------- | ------------
-			Input    | 32x32x32
-	  Convolution    | 1x1 stride,padding="VALID",output = 28x28x6
-		    RELU     | 
-		Max Pooling  | 2x2 stride, output = 14x14x6
-		Convolution  | 1x1 stride,padding="VALID",output = 10x10x16
-			RELU     | 
-		Max Pooling  | 2x2 stride, output = 5x5x16
-		   Flatten   | output = 400
-	FullyConnected   | input = 400, output = 120
-			RELU     |
-	FullyConnected   | input = 120, output = 84
-			RELU     |
-	FullyConnected   | input = 84, output (Logits) = 43	      
-
+</table>			
 
 > **Note:** I did not split the training data into training and validation sets as the validation data that was provided gave reasonable accuracy results.
 
