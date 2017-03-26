@@ -32,7 +32,7 @@ The data set for this project is available as pickled files. There are three set
 Some of the test images as available in the data set can be seen below : </br>
 </br>
 </br>
-<img src="testimages/test_10700.jpg" width="150" style="margin-right: 15px;"> <img src="testimages/test_11654.jpg" width="150" style="margin-right: 15px;">  <img src="testimages/test_11682.jpg" width="150" style="margin-right: 15px;">  <img src="testimages/test_11694.jpg" width="150"> 
+<img src="testimages/test_10700.jpg" width="150" style="margin-right: 30px;"> <img src="testimages/test_11654.jpg" width="150" style="margin-right: 30px;">  <img src="testimages/test_11682.jpg" width="150" style="margin-right: 30px;">  <img src="testimages/test_11694.jpg" width="150"> 
 
 In addition to this the count of each sign is calculated using the unique function available in Python and numpy and plotted using matlab functions.
 
@@ -46,7 +46,7 @@ In addition to this the count of each sign is calculated using the unique functi
 An example of an image before and after grayscaling is seen below: </br>
 </br>
 
-<img src="gray/gray.png" style="margin-right: 50px;"> <img src="gray/test_16.jpg" width="360">
+<img src="gray/gray.png" style="margin-right: 50px;"> <img src="gray/test_16.jpg" width="320">
 
 ##### <b>Normalization</b> - This was done as suggested in one of the lectures in tensor flow to maintain numerical stability. Initially I did not choose to normalize but using normalization improved the validation accuracy. 
 
