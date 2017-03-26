@@ -18,7 +18,7 @@
 > - Summarize the results with a written report.
 
 
-#### <b>Data Set Summary & Exploration
+#### <b>Data Set Summary & Exploration </b>
 
 The data set for this project is available as pickled files. There are three sets of pickled files provided- one for each of training, testing and validation. These picked files are loaded and information about the dataset is extracted from them. This is done is <b> cell 2 and 3 </b> of the Python notebook.
 >*  The length of the training data set = 34799
@@ -26,28 +26,28 @@ The data set for this project is available as pickled files. There are three set
 >* The shape of each image in the data set = 32x32x3 
 >* The number of unique classes in the dataset = 43
 
-#### <b>Data Set Visualisation
-Some of the test images as available in the data set can be seen below.
-<img src="testimages/test_10700.jpg" width="20"> <img src="testimages/test_11654.jpg" width="20">  <img src="testimages/test_11682.jpg" width="20">  <img src="testimages/test_11694.jpg" width="20"> 
+#### <b>Data Set Visualisation</b>
+Some of the test images as available in the data set can be seen below : </br>
+<img src="testimages/test_10700.jpg" width="40"> <img src="testimages/test_11654.jpg" width="40">  <img src="testimages/test_11682.jpg" width="40">  <img src="testimages/test_11694.jpg" width="40"> 
 
 In addition to this the count of each sign is calculated using the unique function available in Python and numpy and plotted using matlab functions.
 
 ![Bar Chart](testimages/barchart.png "Bar Chart Image")
  
-####<b> Preprocessing the dataset
+#### <b> Preprocessing the dataset </b>
 
-#####<b>Shuffling the images</b> - As a first step, the dataset is shuffled to ensure that there is good mix of different kinds of images in each batch run. This was done because without shuffling when the images from the training set was printed, it was seen that bunch of similar images occurred together in the dataset.
+##### <b>Shuffling the images</b> - As a first step, the dataset is shuffled to ensure that there is good mix of different kinds of images in each batch run. This was done because without shuffling when the images from the training set was printed, it was seen that bunch of similar images occurred together in the dataset.
 
-#####<b> Grayscaling the images</b> -  Each image in the dataset is a colored image. Thus images were converted to grayscale to ensure that the network has to operate on one channel instead of three channels. The formula for luminosity was used to grayscale the images as this provided a better estimate than simply averaging the RGB values.
+##### <b> Grayscaling the images</b> -  Each image in the dataset is a colored image. Thus images were converted to grayscale to ensure that the network has to operate on one channel instead of three channels. The formula for luminosity was used to grayscale the images as this provided a better estimate than simply averaging the RGB values.
 An example of an image before and after grayscaling is seen below:
 
 ![alt-text-1](gray/gray.png "title-1") ![alt-text-2](gray/test_16.jpg "title-2")
 
-#####<b>Normalization</b> - This was done as suggested in one of the lectures in tensor flow to maintain numerical stability. Initially I did not choose to normalize but using normalization improved the validation accuracy. 
+##### <b>Normalization</b> - This was done as suggested in one of the lectures in tensor flow to maintain numerical stability. Initially I did not choose to normalize but using normalization improved the validation accuracy. 
 
 The above pre processing steps were done for each of training, testing and validation dataset.
 
-####<b> Model Architecture
+#### <b> Model Architecture </b>
 
 My network is a convolutional neural network, as these tend to do very well with images. I mostly used the same architecture as the LeNet neural network did, with 2 convolutional layers and 3 fully connected layers. The convolutional neural network is defined in the 10th cell of the IPython notebook.
 
@@ -78,11 +78,11 @@ I utilized the AdamOptimizer from within TensorFLow to optimize, which seemed to
 
 > **Note:** I did not split the training data into training and validation sets as the validation data that was provided gave reasonable accuracy results.
 
-#####<b> My final model results were :
+##### <b> My final model results were : </b>
 Validation Accuracy = 94.2%
 Testing accuracy = 91.2%
 
-####<b> Testing model on new images
+#### <b> Testing model on new images </b>
 
 Five German traffic signs were downloaded from the internet and ran using our network. The five images are as follows:
 
