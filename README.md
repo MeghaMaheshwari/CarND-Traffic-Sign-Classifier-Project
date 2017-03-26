@@ -1,5 +1,7 @@
 ## <b>Udacity Self-Driving Nanodegree 
 <hr/>
+
+
 ## Traffic Sign Recognition
 ======================================================================
 
@@ -28,7 +30,7 @@ The data set for this project is available as pickled files. There are three set
 
 #### <b>Data Set Visualisation</b>
 Some of the test images as available in the data set can be seen below : </br>
-<img src="testimages/test_10700.jpg" width="40"> <img src="testimages/test_11654.jpg" width="40">  <img src="testimages/test_11682.jpg" width="40">  <img src="testimages/test_11694.jpg" width="40"> 
+<img src="testimages/test_10700.jpg" width="80" style="margin-right: 5px;"> <img src="testimages/test_11654.jpg" width="80" style="margin-right: 5px;">  <img src="testimages/test_11682.jpg" width="80" style="margin-right: 5px;">  <img src="testimages/test_11694.jpg" width="80"> 
 
 In addition to this the count of each sign is calculated using the unique function available in Python and numpy and plotted using matlab functions.
 
