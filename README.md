@@ -28,7 +28,10 @@ The data set for this project is available as pickled files. There are three set
 
 ####<b>Data Set Visualisation
 Some of the test images as available in the data set can be seen below.
-![alt-text-1](testimages\test_10700.jpg "title-1") ![alt-text-2](testimages\test_11654.jpg "title-2")![alt-text-1](testimages\test_11682.jpg "title-1") ![alt-text-2](testimages\test_11694.jpg "title-2")
+![alt-text-1](testimages/test_10700.png) 
+![alt-text-2](testimages/test_11654.jpg)
+![alt-text-1](testimages/test_11682.jpg) 
+![alt-text-2](testimages/test_11694.jpg")
 
 In addition to this the count of each sign is calculated using the unique function available in Python and numpy and plotted using matlab functions.
 
@@ -41,7 +44,7 @@ In addition to this the count of each sign is calculated using the unique functi
 #####<b> Grayscaling the images</b> -  Each image in the dataset is a colored image. Thus images were converted to grayscale to ensure that the network has to operate on one channel instead of three channels. The formula for luminosity was used to grayscale the images as this provided a better estimate than simply averaging the RGB values.
 An example of an image before and after grayscaling is seen below:
 
-![alt-text-1](gray\gray.png "title-1") ![alt-text-2](gray\test_16.jpg "title-2")
+![alt-text-1](gray/gray.png "title-1") ![alt-text-2](gray/test_16.jpg "title-2")
 
 #####<b>Normalization</b> - This was done as suggested in one of the lectures in tensor flow to maintain numerical stability. Initially I did not choose to normalize but using normalization improved the validation accuracy. 
 
