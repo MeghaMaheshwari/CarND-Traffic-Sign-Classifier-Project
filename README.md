@@ -1,9 +1,9 @@
-##<b>Udacity Self-Driving Nanodegree 
+## <b>Udacity Self-Driving Nanodegree 
 <hr/>
-##Traffic Sign Recognition
+## Traffic Sign Recognition
 ======================================================================
 
-###Build a Traffic Sign Recognition Project
+### Build a Traffic Sign Recognition Project
 
 > **The Steps in the Project are as following :**
 
@@ -18,7 +18,7 @@
 > - Summarize the results with a written report.
 
 
-####<b>Data Set Summary & Exploration
+#### <b>Data Set Summary & Exploration
 
 The data set for this project is available as pickled files. There are three sets of pickled files provided- one for each of training, testing and validation. These picked files are loaded and information about the dataset is extracted from them. This is done is <b> cell 2 and 3 </b> of the Python notebook.
 >*  The length of the training data set = 34799
@@ -26,9 +26,9 @@ The data set for this project is available as pickled files. There are three set
 >* The shape of each image in the data set = 32x32x3 
 >* The number of unique classes in the dataset = 43
 
-####<b>Data Set Visualisation
+#### <b>Data Set Visualisation
 Some of the test images as available in the data set can be seen below.
-<img src="testimages/test_10700.png" width="20"> <img src="testimages/test_11654.jpg" width="20">  <img src="testimages/test_11682.jpg" width="20">  <img src="testimages/test_11694.jpg" width="20"> 
+<img src="testimages/test_10700.jpg" width="20"> <img src="testimages/test_11654.jpg" width="20">  <img src="testimages/test_11682.jpg" width="20">  <img src="testimages/test_11694.jpg" width="20"> 
 
 In addition to this the count of each sign is calculated using the unique function available in Python and numpy and plotted using matlab functions.
 
