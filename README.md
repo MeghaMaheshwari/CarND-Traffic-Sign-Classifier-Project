@@ -150,7 +150,13 @@ The five images I have added are: </br>
 4: Stop Sign 
 5: Yield sign.
 
-The accuracy result is 100%. One reason for low accuracy result is that since my network accepts an input of size 32x32x3 , I had to resize the image to 32x32 which also effected the aspect ratio.
+The accuracy result is 100%. I read the signnames.csv file and compared the predicted labels that were obtained by training these values against the values
+that were specified in signnames.csv for these images which can be seen in <b>cell 25</b> of the IPython notebook and the values match completely.
+ 
+One of the reasons for such a good accuracy result is that, I printed th training images and saw that a large number of images closely match to the traffic sign
+images that I chose from the web. 
 
-From the soft max probability, the cross sign is detected incorrectly because it assumes its a speed limit sign which I assume is due to its shape.
+In order to confirm my resuts, I also replaced one of the traffic sign images with a random image and could see the accuracy going down.
+
+From the soft max probability matrix output, it is also seen that each of the correct labels were predicted with the highest probability.
 
