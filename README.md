@@ -144,11 +144,11 @@ Five German traffic signs were downloaded from the internet and ran using our ne
 <img src="german_traffic_sign/NoEntry_Sign.jpg" width="150" style="margin-right: 50px;"> <img src="german_traffic_sign/Pedestrain_Sign.jpg" width="150" style="margin-right: 50px;">  <img src="german_traffic_sign/SpeedLimit_50_Sign.jpg" width="150" style="margin-right: 50px;">  <img src="german_traffic_sign/Stop_Sign.jpg" width="150" style="margin-right: 50px;"> <img src="german_traffic_sign/Yeild_Sign.jpg" width="150">
 
 The five images I have added are: </br>
-1: No Entry sign
-2: Pedestrian sign
-3: 50 Speed Limit
-4: Stop Sign 
-5: Yield sign.
+1: No Entry sign <br/>
+2: Pedestrian sign <br/>
+3: 50 Speed Limit <br/>
+4: Stop Sign <br/>
+5: Yield sign <br/>
 
 The accuracy result is 100%. I read the signnames.csv file and compared the predicted labels that were obtained by training these values against the values
 that were specified in signnames.csv for these images which can be seen in <b>cell 25</b> of the IPython notebook and the values match completely.
